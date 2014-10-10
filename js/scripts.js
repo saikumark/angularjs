@@ -24,7 +24,8 @@ soccerApp.config(function($routeProvider,$locationProvider){
 
 //Main Controller which loads for default URL
 soccerApp.controller('mainController', function($scope){
-	$scope.message = 'This is main page of project';
+    $scope.message1 = 'Tech Stack: AngularJS, PHP, MySQL, CSS';
+    $scope.message2 = 'Description: This project is to get list of data from PHP web services through AngularJS';
 });
 
 //Team controller which helps to load list of team and team players for specific team
