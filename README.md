@@ -1,4 +1,9 @@
 angularjs
 =========
 
-list data from DB through REST web service using angularjs 
+Tech Stack: AngularJS, PHP, MySQL, CSS
+
+Description:
+This project is to get list of data from PHP web services through AngularJS.
+
+
