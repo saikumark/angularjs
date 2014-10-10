@@ -2,7 +2,7 @@
 
 /**
  * Description of SoccerController
- *
+ * @desc Controler which receives input from the user and returns the data by using Models
  * @author Saikumar K
  */
 class SoccerController {
@@ -15,7 +15,7 @@ class SoccerController {
     }
     
     /**
-     * 
+     * @desc Used to retrieve all teams in the system
      */
     public static function getTeams(){
         
@@ -24,6 +24,10 @@ class SoccerController {
         return $teams;
     }
     
+    /**
+     * @desc Used to retrieve all players for the given team Id
+     * @return Array contains player information
+     */
     public static function getPlayers(){
 
         if(!empty($_GET['team']) && $_GET['team'] > 0){

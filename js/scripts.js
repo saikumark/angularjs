@@ -1,5 +1,7 @@
+//Define Soccer Module
 var soccerApp = angular.module('soccerApp', ['ngRoute']);
 
+//Route various request to different controller
 soccerApp.config(function($routeProvider,$locationProvider){
 	$routeProvider
 	.when('/', {
@@ -15,21 +17,17 @@ soccerApp.config(function($routeProvider,$locationProvider){
 	.when('/teams', {
 		templateUrl: 'pages/teams.html',
 		controller: 'teamController'
-	})
-	
-
-	.when('/players', {
-		templateUrl: 'pages/players.html',
-		controller: 'playerController'
 	});
 	
 	//$locationProvider.html5Mode(true);
 });
 
+//Main Controller which loads for default URL
 soccerApp.controller('mainController', function($scope){
 	$scope.message = 'This is main page of project';
 });
 
+//Team controller which helps to load list of team and team players for specific team
 soccerApp.controller('teamController', function($scope,$http,$routeParams){
 
 	$scope.teamId = $routeParams.teamId;
@@ -60,15 +58,4 @@ soccerApp.controller('teamController', function($scope,$http,$routeParams){
                 $scope.teams = data;
             });	
 	}
-});
-
-soccerApp.controller('playerController', function($scope,$http){
-	var response = $http.get('/src/api.php');
-	response.success(function(data, status, headers, config){
-		$scope.teams = data.teams;
-	});
-	
-	var ModalInstanceCtrl = function ($scope, $modalInstance) {
-		$scope.customHTML = "<h1> Random html snippet at run time </h1>";
-	};
 });

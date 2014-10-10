@@ -1,13 +1,13 @@
 <?php
 /**
  * Description of Team
- *
+ * @desc Used to do DB operations with teams table.
  * @author Saikumar K
  */
 class TeamModel extends Model{
     
     /**
-     * 
+     * Define table name for this model
      */
     private $dbTable = 'teams';
     public function __construct(){
@@ -15,8 +15,8 @@ class TeamModel extends Model{
     }
     
     /**
-     * 
-     * @param type $ipArray
+     * @desc Used to retrieve list of teams 
+     * @param type $ipArray 
      */
     public function getTeams($ipArray=array()){
         

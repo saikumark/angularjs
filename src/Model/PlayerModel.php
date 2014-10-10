@@ -1,11 +1,4 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of Player
  *
@@ -14,7 +7,7 @@
 class PlayerModel extends Model{
     
     /**
-     * 
+     * Contains DB table which contains player details.
      */
     private $dbTable = 'players';
     public function __construct(){
@@ -22,13 +15,18 @@ class PlayerModel extends Model{
     }
     
     /**
-     * 
+     * @desc Used to get players for the given team.
      * @param type $ipArray
      */
     public function getPlayers($ipArray=array()){
         
-        $ipArray['table'] = $this->dbTable;
-        $playerData = $this->dbInstance->getData($ipArray);
-        return $playerData;
+        if(!empty($ipArray['where'])){
+            $ipArray['table'] = $this->dbTable;
+            $playerData = $this->dbInstance->getData($ipArray);
+            return $playerData;
+        }
+        else{
+            return false;
+        }
     }
 }
