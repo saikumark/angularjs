@@ -1,7 +1,7 @@
 <?php
 define('DB_NAME','dbSoccerSai');
-define('DB_USERNAME','dbSoccerSai');
-define('DB_PASSWORD','S@!kuma2014');
+define('DB_USERNAME','UNAME');
+define('DB_PASSWORD','PASS');
 define('DB_HOST','localhost');
 
 function __autoload($className){
